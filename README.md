@@ -1,6 +1,8 @@
-# MaryTTS 5.2 with HSMM Voices
+# MaryTTS 5.2 with unit selection and HSMM Voices
 
-[MaryTTS 5.2](http://mary.dfki.de) text to speech server and a collection of hidden semi-Markov model (HSMM) [voices for various languages](#voices) in a multi-platform Docker image.
+Based on [synesthesiam/marytts](https://hub.docker.com/r/synesthesiam/marytts).
+
+[MaryTTS 5.2](http://mary.dfki.de) text to speech server and a collection [voices for various languages](#voices), both hidden semi-Markov model (HSMM) and unit selection, in a multi-platform Docker image.
 
 Also includes [txt2wav](https://github.com/marytts/marytts-txt2wav) utility for [command-line text to speech](#command-line-utility).
 
@@ -9,6 +11,14 @@ Supported Platforms:
 * `amd64` - laptops, desktops, servers
 * `arm/v7` - Raspberry Pi 2/3
 * `arm64` - Raspberry Pi 3+/4
+
+## Building
+
+To build this image locally:
+
+```bash
+docker buildx build marytts:5.2 .
+```
 
 ## Running
 
@@ -23,6 +33,8 @@ You should now be able to access the server at [http://localhost:59125](http://l
 Beware that this may consume a lot of RAM on a Raspberry Pi!
 
 ### Restricting Voices
+
+*Feature not updated to work with non-HMS voices*
 
 You can control which voices are loaded with `-v` or `--voice` arguments:
 
