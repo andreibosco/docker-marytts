@@ -1,14 +1,14 @@
 FROM openjdk:8-jre as base-amd64
 
-FROM arm32v7/openjdk:8-jre as base-armv7
+# FROM arm32v7/openjdk:8-jre as base-armv7
 
-FROM arm64v8/openjdk:8-jre as base-arm64
+# FROM arm64v8/openjdk:8-jre as base-arm64
 
 # -----------------------------------------------------------------------------
 
-ARG TARGETARCH
-ARG TARGETVARIANT
-FROM base-$TARGETARCH$TARGETVARIANT
+# ARG TARGETARCH
+# ARG TARGETVARIANT
+# FROM base-$TARGETARCH$TARGETVARIANT
 
 ENV MARY_BASE=/marytts
 
