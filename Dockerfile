@@ -1,15 +1,5 @@
 FROM openjdk:8-jre as base-amd64
 
-# FROM arm32v7/openjdk:8-jre as base-armv7
-
-# FROM arm64v8/openjdk:8-jre as base-arm64
-
-# -----------------------------------------------------------------------------
-
-# ARG TARGETARCH
-# ARG TARGETVARIANT
-# FROM base-$TARGETARCH$TARGETVARIANT
-
 ENV MARY_BASE=/marytts
 
 COPY lib/ ${MARY_BASE}/lib/
@@ -37,6 +27,11 @@ RUN unzip temp/voice-dfki-poppy-5.2.zip
 RUN unzip temp/voice-dfki-obadiah-5.2.zip
 RUN rm -rf temp
 
+FROM openjdk:8-jre-slim
+
+ENV MARY_BASE=/marytts
+COPY --from=base-amd64 ${MARY_BASE} ${MARY_BASE}
+WORKDIR ${MARY_BASE}
 EXPOSE 15195
 
 ENTRYPOINT ["bash", "/marytts/bin/marytts-server"]

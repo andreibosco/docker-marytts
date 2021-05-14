@@ -2,15 +2,9 @@
 
 Based on [synesthesiam/marytts](https://hub.docker.com/r/synesthesiam/marytts).
 
-[MaryTTS 5.2](http://mary.dfki.de) text to speech server and a collection [voices for various languages](#voices), both hidden semi-Markov model (HSMM) and unit selection, in a multi-platform Docker image.
+[MaryTTS 5.2](http://mary.dfki.de) text to speech server and a collection [voices for various languages](#voices), both hidden semi-Markov model (HSMM) and unit selection for amd64 platform.
 
 Also includes [txt2wav](https://github.com/marytts/marytts-txt2wav) utility for [command-line text to speech](#command-line-utility).
-
-Supported Platforms:
-
-* `amd64` - laptops, desktops, servers
-* `arm/v7` - Raspberry Pi 2/3
-* `arm64` - Raspberry Pi 3+/4
 
 ## Building
 
